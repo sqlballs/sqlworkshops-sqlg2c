@@ -8,7 +8,7 @@
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="https://github.com/microsoft/sqlworkshops/blob/master/graphics/textbubble.png?raw=true"> <h2> 04 - SQL Server on the Microsoft Azure Platform </h2>
 
-In the previous modules, you learned about SQL Server 2019, big data, and more. In this module, you'll learn more about Azure SQL, including the benefits, the options, and how to get there. Near the end of the module, you'll learn how to assess your on-premises estate, through an example with the  Tailspin Toys Gaming division of Wide World Importers, with tools like [Azure Migrate](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview) and [Data Migration Assistant](https://docs.microsoft.com/en-us/sql/dma/dma-overview?view=sql-server-2017). The module is broken up into the following sections:  
+In the previous modules, you learned about SQL Server on-premises, big data, and more. In this module, you'll learn more about Azure SQL, including the benefits, the options, and how to get there. Near the end of the module, you'll learn how to assess your on-premises estate, through an example with the  Tailspin Toys Gaming division of Wide World Importers, with tools like [Azure Migrate](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview) and [Data Migration Assistant](https://docs.microsoft.com/en-us/sql/dma/dma-overview?view=sql-server-2017). The module is broken up into the following sections:  
 
 [4.1](#4.1): Introduction to Azure SQL   
 [4.2](#4.2): Azure SQL Platform Benefits   
@@ -78,7 +78,7 @@ Recently, [Resource Provider](http://www.aka.ms/sqlvm_rp_documentation) was [ann
 > Note: If you're specifically looking at SQL Server on RHEL Azure VMs, there's a full operations guide available [here](https://azure.microsoft.com/en-us/resources/sql-server-on-rhel-azure-vms-operations-guide/
 ).  
   
-> Note: In an earlier module of this workshop, you learned about some of the problems SQL Server 2019 is solving. The same applies in an Azure SQL VM (if you choose 2019 as the target).  
+> Note: In an earlier module of this workshop, you learned about some of the problems SQL Server is solving. The same applies in an Azure SQL VM.  
 
 #### Azure SQL Database options  
 
@@ -237,14 +237,14 @@ At the end of these hands-on labs, you will be better able to implement a cloud 
 
 Below is a diagram of the solution architecture that Tailspin Toys decided to go with, and what you will build in this lab. Please study this carefully, so you understand the whole of the solution as you are working on the various components.
 
-![This solution diagram includes a virtual network containing SQL MI in a isolated subnet, along with a JumpBox VM and Database Migration Service in a management subnet. The MI Subnet displays both the primary managed instance, along with a read-only replica, which is accessed by reports from the web app. The web app connects to SQL MI via a subnet gateway and point-to-site VPN. The web app is published to App Services using Visual Studio 2019. An online data migration is conducted from the on-premises SQL Server to SQL MI using the Azure Database Migration Service, which reads backup files from an SMB network share.](https://github.com/microsoft/sqlworkshops-azuresqllabs/blob/master/graphics/preferred-solution-architecture.png?raw=true "Preferred Solution diagram")
+![This solution diagram includes a virtual network containing SQL MI in a isolated subnet, along with a JumpBox VM and Database Migration Service in a management subnet. The MI Subnet displays both the primary managed instance, along with a read-only replica, which is accessed by reports from the web app. The web app connects to SQL MI via a subnet gateway and point-to-site VPN. The web app is published to App Services using Visual Studio. An online data migration is conducted from the on-premises SQL Server to SQL MI using the Azure Database Migration Service, which reads backup files from an SMB network share.](https://github.com/microsoft/sqlworkshops-azuresqllabs/blob/master/graphics/preferred-solution-architecture.png?raw=true "Preferred Solution diagram")
 
 Throughout the solution, you will use [Azure Migrate](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview) as the central hub to track the discovery, assessment, and migration of Tailspin Toys. The solution begins with using the [Microsoft Data Migration Assistant](https://docs.microsoft.com/en-us/sql/dma/dma-overview?view=sql-server-2017) to perform assessments of feature parity and compatibility of the on-premises SQL Server 2008 R2 database against both Azure SQL Database (Azure SQL DB) and Azure SQL Database Managed Instance (SQL MI), with the goal of migrating the `TailspinToys` database into an Azure PaaS offering with minimal or no changes. After completing the assessments and reviewing the findings, the SQL Server 2008 R2 database is migrated into SQL MI using the Azure Database Migration Service's online data migration option. This allows the database to be migrated with little to no downtime, by using a backup and transaction logs stored in an SMB network share.  
 
 They'll also leverage their existing licenses to get [Azure Hybrid Benefits](https://azure.microsoft.com/en-us/pricing/hybrid-benefit/), and they'll prepay for [reserved capacity](https://azure.microsoft.com/en-us/blog/announcing-general-availability-of-azure-sql-database-reserved-capacity/
 ). This will help them save money from the start.  
 
-The web app is deployed to an Azure App Service Web App using Visual Studio 2019. Once the database has been migrated and cutover, the `TailspinToysWeb` application is configured to talk to the SQL MI VNet through a virtual network gateway using [point-to-site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about), and its connection strings are updated to point to the new SQL MI database.  
+The web app is deployed to an Azure App Service Web App using Visual Studio. Once the database has been migrated and cutover, the `TailspinToysWeb` application is configured to talk to the SQL MI VNet through a virtual network gateway using [point-to-site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about), and its connection strings are updated to point to the new SQL MI database.  
 
 >**Note**: Due to time constraints, the lab will deal with switching the app running on a Jumpbox VM locally from leveraging data in SQL Server 2008 to SQL MI (but not the deployment to Azure or integrating the App Service with the Virtual Network). In the [extended version of these labs](https://github.com/microsoft/MCW-Migrating-SQL-databases-to-Azure/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Migrating%20SQL%20databases%20to%20Azure.md#exercise-3-update-the-web-application-to-use-the-new-sql-mi-database), or if you have time at the end of the lab, you can do that.  
 
