@@ -23,7 +23,7 @@ The WideWorldImporters company has been evaluating upgrading several SQL Server 
 
 In this workshop module, you will see the capabilities in SQL Server 2019 that can provide solutions for these challenges.
 
-> **NOTE**: <a href="https://github.com/microsoft/sqlworkshops-sqlg2c/blob/master/sqlgroundtocloud/00-prerequisites.md" target="_blank">Make sure you check out the <b>prerequisite</b> page before you start.</a> You'll need all of the items loaded there before you can proceed with the workshop. Instructor led workshops may have provided all the resources in the prerequisites.
+> **NOTE**: <a href="https://github.com/sqlballs/sqlworkshops-sqlg2c/blob/Brad's-Branch/sqlgroundtocloud/00-prerequisites.md" target="_blank">Make sure you check out the <b>prerequisite</b> page before you start.</a> You'll need all of the items loaded there before you can proceed with the workshop. Instructor led workshops may have provided all the resources in the prerequisites.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
@@ -31,11 +31,11 @@ In this workshop module, you will see the capabilities in SQL Server 2019 that c
 
 In this activity, you will complete a series of modules from the **SQL Server 2019 Lab**.
 
-Instructor led workshops will use modules from the SQL Server 2019 lab along with the PowerPoint slides <a href="https://github.com/microsoft/sqlworkshops/blob/master/SQLGroundToCloud/slides/SQL%20Server%202019%20Modern%20Data%20Platform.pptx">SQL Server 2019 Modern Data Platform</a>. Instructor led labs may not go through all modules in the SQL Server 2019 lab.
+Instructor led workshops will use modules from the SQL Server 2019 lab along with the PowerPoint slides <a href="https://github.com/sqlballs/sqlworkshops-sqlg2c/blob/Brad's-Branch/slides/SQL%20Server%202019%20Modern%20Data%20Platform.pptx">SQL Server 2019 Modern Data Platform</a>. Instructor led labs may not go through all modules in the SQL Server 2019 lab.
 
 <h3><img style="margin: 0px 15px 15px 0px;" src="https://github.com/microsoft/sqlworkshops/blob/master/graphics/checkmark.png?raw=true"><b>Activity Steps</b></h3>
 
-To complete this module, go to https://github.com/microsoft/sqlworkshops/blob/master/sql2019lab/README.md.
+To complete this module, go to https://github.com/sqlballs/sqlworkshops-sql2019lab/blob/Brad's-Branch/README.md.
 
 When you are done with the SQL Server 2019 lab you have completed Module 02 of the SQL Server Ground to Cloud Workshop! Proceed to the next module using the link in Next Steps below.
 
@@ -54,4 +54,4 @@ When you are done with the SQL Server 2019 lab you have completed Module 02 of t
 
 <h2><img style="float: left; margin: 0px 15px 15px 0px;" src="https://github.com/microsoft/sqlworkshops/blob/master/graphics/geopin.png?raw=true"><b>  Next Steps</b></h2>
 
-Next, Continue to <a href="https://github.com/microsoft/sqlworkshops-sqlg2c/blob/master/sqlgroundtocloud/03-WorkingWithBigDataAndDataScienceBigDataClustersForSQLServer2019.md" target="_blank"><i> 03 - Working with Big Data Clusters on SQL Server 2019</i></a>.
+Next, Continue to <a href="https://github.com/sqlballs/sqlworkshops-sqlg2c/blob/Brad's-Branch/sqlgroundtocloud/03-WorkingWithBigDataAndDataScienceBigDataClustersForSQLServer2019.md" target="_blank"><i> 03 - Working with Big Data Clusters on SQL Server 2019</i></a>.
